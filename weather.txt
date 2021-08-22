@@ -1,0 +1,15 @@
+날씨 앱 만들기 - react native 
+
+node, npm install
+mac os면 Xcode install 해야함(simulator를 위해)
+windows 면 안드로이드 스튜디오 install
+expo를 이용해 폰에서 작업도 가능
+
+expo : creat-react-app과 같은 역할. react native를 위한 설정 파일같은 것들이 없는 방식으로,
+모든것이 셋업되어 있음
+
+cmd
+-. -g : global
+  : npm install -g expo-cli
+-. 원하는 경로
+  : expo init 프로젝트명
