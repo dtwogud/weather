@@ -13,3 +13,17 @@ cmd
   : npm install -g expo-cli
 -. 원하는 경로
   : expo init 프로젝트명
+-. git에 추가 후 폴더 들어가서 npm start(VSC, cmd둘다 가능)
+-. VSC 터미널에서 expo login, 폰에서 expo 어플 실행 후 login
+(https://seopark.tistory.com/6)
+
+-.저장과 함께 refresh가되고 변경점 확인가능 : live reload
+-.폰에서 개발자모드 확인하고 싶으면 흔들기
+
+-. 모바일 앱을 만드는 3가지 다른방법
+  1) 완전 native : swift or onject-c로 ios앱 만들기, java or 코들린으로 android앱 만들기
+  2) 하이브리드 : 앱 기반 웹뷰 만들기(Cordova or PhoneGap이용)
+  3) 
+
+-. 웹사이트에서 모든 flex박스의 디폴트는 row, react native는 flex direction 디폴트가 column
+(모바일 기기에서는  대게 위 아래로 스크롤)
