@@ -3,7 +3,8 @@
 node, npm install
 mac os면 Xcode install 해야함(simulator를 위해)
 windows 면 안드로이드 스튜디오 install
-expo를 이용해 폰에서 작업도 가능
+expo를 이용해 폰에서 작업도 가능, expo이용 사용할지 말지 모르는 많은 library들을 설치하지 않으므로써
+실행환경을 더 가볍게 만듦
 
 expo : creat-react-app과 같은 역할. react native를 위한 설정 파일같은 것들이 없는 방식으로,
 모든것이 셋업되어 있음
@@ -27,3 +28,48 @@ cmd
 
 -. 웹사이트에서 모든 flex박스의 디폴트는 row, react native는 flex direction 디폴트가 column
 (모바일 기기에서는  대게 위 아래로 스크롤)
+
+https://docs.expo.dev/versions/latest/sdk/location/
+-. react native에서 geolocation API확인 가능
+-. expo에서 location은 조금더 확장된 정보 확인 가능
+  : expo install expo-location or npm install expo-location
+  : import 필요 in App.js
+    : import * as Location from 'expo-location';
+-. Location permission을 위해서 try-catch문을 이용해 Location.requestForegroundPermissionsAsync(); 사용
+console.log에서 lat, lon data 확인
+lat : 37.50422698824622
+lon : 127.0812478619918
+
+openweathermap.org
+  : By gergraphic coordinates로 날씨정보 가져오기
+const API_KEY = "b0b4eef576540568d126dff231645d2b";
+api.openweathermap.org/data/2.5/weather?lat={lat}&lon={lon}&appid={API key}
+-. Parameters units
+  -. metric : 섭씨
+  -. imperial : 화씨
+  섭씨 적용을 위해 쿼리(url)뒤에 &units=metric 추가
+
+API로부터 data fetch를 위해 Axios설치 : npm install axios
+-. 새로운 함수 생성(getWeather)
+
+ㅁWeather.js
+-. props를 몇개 가질 예정 : npm install prop-types
+import React from 'react';
+import {Vue, Text, StyleSheet} from "react-native"
+import PropTypes from 'prop-types';
+
+API
+-. list of weather condition codes에서 날씨 이름 확인
+
+@expo/vector-icons 확인 (Weather.js에 추가)
+https://icons.expo.fyi/
+import {Ionicons} from "@expo/vector-icons";
+          (font-family name)
+
+- 배경화면 색 지정을 위해 css가 아닌 LinearGradient 사용
+https://uigradients.com/#Summer
+terminal : expo install expo-linear-gradient
+Weather.js : import {LinearGradient} from "expo-linear-gradient";
+
+각 날씨의 정보를 담은 weatheroption배열 안에서 각 아이콘 지정, 해당 아이콘 불러오기 위해
+name={weatherOptions["Thunderstorm"].iconName}
