@@ -73,3 +73,4 @@ Weather.js : import {LinearGradient} from "expo-linear-gradient";
 
 각 날씨의 정보를 담은 weatheroption배열 안에서 각 아이콘 지정, 해당 아이콘 불러오기 위해
 name={weatherOptions["Thunderstorm"].iconName}
+

@@ -27,6 +27,8 @@
     },
     "web": {
       "favicon": "./assets/favicon.png"
-    }
+    },
+    "description": "make weather App with react native, expo",
+    "githubUrl": "https://github.com/dtwogud/weather"
   }
 }

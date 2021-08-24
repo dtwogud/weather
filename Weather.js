@@ -4,64 +4,75 @@ import PropTypes from 'prop-types';
 import { LinearGradient } from 'expo-linear-gradient';
 import { Ionicons } from '@expo/vector-icons';
 
+
 const weatherOptions = {
   Thunderstorm: {
-    iconName: "weather-lightning",
-    gradient: ["#373B44", "#4286f4"],
-    title: "Thunderstorm in the house",
-    subtitle: "Actually, outside of the house"
+    iconName: "thunderstorm",
+    gradient: ["#403B4A", "#E7E9BB"],
+    title: "Thunderstorm outside",
+    subtitle: "God of Thunder is comming...",
+    music : "FT아일랜드 - 천둥"
   },
   Drizzle: {
-    iconName: "weather-hail",
-    gradient: ["#89F7FE", "#66A6FF"],
+    iconName: "water",
+    gradient: ["#4286f4", "#373B44"],
     title: "Drizzle",
-    subtitle: "Is like rain, but gay 🏳️‍🌈"
+    subtitle: "불쾌지수 상승 angle :(",
+    music : "Green Da - Last Night On Earth"
   },
   Rain: {
-    iconName: "weather-rainy",
-    gradient: ["#00C6FB", "#005BEA"],
-    title: "Raining like a MF",
-    subtitle: "For more info look outside"
+    iconName: "rainy-sharp",
+    gradient: ["#2980b9", "#2c3e50"],
+    title: "Mother pumkin Rainy!",
+    subtitle: "산성비 맞으면 대머리ㅋㅋ",
+    music : "헤이즈 - 비도오고 그래서(feat.신용재)"
   },
   Snow: {
-    iconName: "weather-snowy",
-    gradient: ["#7DE2FC", "#B9B6E5"],
-    title: "Cold as balls",
-    subtitle: "Do you want to build a snowman? Fuck no."
+    iconName: "snow",
+    gradient: ["#E6DADA", "#274046"],
+    title: "Snowy like X-mas!",
+    subtitle: "Actually there's no Santa..",
+    music : "Mariah Carey - All I Want for Christmas Is You"
   },
   Atmosphere: {
-    iconName: "weather-hail",
-    gradient: ["#89F7FE", "#66A6FF"]
+    iconName: "cloud",
+    gradient: ["#667db6", "#0082c8"],
+    music : "지코 - 아무노래"
   },
   Clear: {
-    iconName: "weather-sunny",
-    gradient: ["#FF7300", "#FEF253"],
-    title: "Sunny as fuck",
-    subtitle: "Go get your ass burnt"
+    iconName: "sunny",
+    gradient: ["#ffff1c", "#00c3ff"],
+    title: "Sunny",
+    subtitle: "Go get your sunblock ",
+    music : "SOLE - RIDE(Feat.THAMA)"
   },
   Clouds: {
-    iconName: "weather-cloudy",
-    gradient: ["#D7D2CC", "#304352"],
+    iconName: "ios-cloudy-night-sharp",
+    gradient: ["#525252", "#3d72b4"],
     title: "Clouds",
-    subtitle: "I know, fucking boring"
+    subtitle: "아무것도 하기싫어;",
+    music : "로띠안 - 구름(Freat.예빚)"
   },
   Mist: {
-    iconName: "weather-hail",
-    gradient: ["#4DA0B0", "#D39D38"],
+    iconName: "water",
+    gradient: ["#616161", "#9bc5c3"],
     title: "Mist!",
-    subtitle: "It's like you have no glasses on."
+    subtitle: "It seems like Mystery",
+    music : "Beast - Mystery"
   },
   Dust: {
-    iconName: "weather-hail",
-    gradient: ["#4DA0B0", "#D39D38"],
+    iconName: "alert-sharp",
+    gradient: ["#e9d362", "#333333"],
     title: "Dusty",
-    subtitle: "Thanks a lot China 🖕🏻"
+    subtitle: "Thanks a lot China 🖕🏻",
+    music : "김광석 - 먼지가 되어"
   },
   Haze: {
-    iconName: "weather-hail",
-    gradient: ["#4DA0B0", "#D39D38"],
+    iconName: "cloudy-outline",
+    gradient: ["#304352", "#d7d2cc"],
     title: "Haze",
-    subtitle: "Just don't go outside."
+    subtitle: "여보안경안보여",
+    music : "브라운 아이드 소울 - 그대의 밤, 나의 아침"
   }
 };
 
@@ -82,7 +93,8 @@ export default function Weather({temp, condition}){
       </View>
       <View style={{...styles.halfContainer, ...styles.textContainer}}>
         <Text style={styles.title}>{weatherOptions[condition].title}</Text>
-        <Text style={styles.subtitle}>{weatherOptions[condition].subtitle}</Text>
+        <Text style={styles.subtitle}> : {weatherOptions[condition].subtitle}</Text>
+        <Text style={styles.music}>추천곡 : {weatherOptions[condition].music}</Text>
       </View>
       </LinearGradient>
   )
@@ -98,14 +110,14 @@ Weather.propTypes = {
     "Atmosphere",
     "Clear",
     "Clouds",
-    "Dust",
-    "Fog",
     "Mist",
-    "Smoke"
+    "Dust",
+    "Haze"
   ]).isRequired
 }
 
 const styles = StyleSheet.create({
+  
   container : {
     flex : 1,
     justifyContent : "center",
@@ -123,7 +135,7 @@ const styles = StyleSheet.create({
   },
   title:{
     color : "white",
-    fontSize:30
+    fontSize:35
   },
   subtitle:{
     color : "white",
@@ -131,6 +143,18 @@ const styles = StyleSheet.create({
   },
   textContainer:{
     paddingHorizontal : 20,
+    alignItems : "flex-start",
+    marginTop :20,
+    marginBottom :20
+  },
+  music : {
+    paddingTop : 20,
+    paddingBottom : 20,
+    color : "white",
+    fontsize : 20,
+    justifyContent : "center",
+    alignItems : "center",
     alignItems : "flex-start"
+
   }
 })
