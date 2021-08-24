@@ -76,7 +76,7 @@ const weatherOptions = {
   }
 };
 
-export default function Weather({temp, condition}){
+export default function Weather({temp, condition, name}){
   return(
       <LinearGradient
         colors={weatherOptions[condition].gradient}
@@ -89,6 +89,7 @@ export default function Weather({temp, condition}){
         size={80}
         color="white"
       />
+      <Text style={styles.city}>현재위치 : {name}</Text>
         <Text style={styles.temp}>{temp} ℃</Text>
       </View>
       <View style={{...styles.halfContainer, ...styles.textContainer}}>
@@ -155,6 +156,9 @@ const styles = StyleSheet.create({
     justifyContent : "center",
     alignItems : "center",
     alignItems : "flex-start"
-
+  },
+  city : {
+    color : "white",
+    fontSize : 20
   }
 })
