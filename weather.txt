@@ -22,7 +22,7 @@ cmd
 -.폰에서 개발자모드 확인하고 싶으면 흔들기
 
 -. 모바일 앱을 만드는 3가지 다른방법
-  1) 완전 native : swift or onject-c로 ios앱 만들기, java or 코들린으로 android앱 만들기
+  1) 완전 native : swift or object-c로 ios앱 만들기, java or 코들린으로 android앱 만들기
   2) 하이브리드 : 앱 기반 웹뷰 만들기(Cordova or PhoneGap이용)
   3) 
 
