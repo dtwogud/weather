@@ -1,5 +1,5 @@
 import React from 'react';
-import {View, Text, StyleSheet, StatusBar} from "react-native"
+import {View, Text, StyleSheet, StatusBar, Linking} from "react-native";
 import PropTypes from 'prop-types';
 import { LinearGradient } from 'expo-linear-gradient';
 import { Ionicons } from '@expo/vector-icons';
@@ -89,13 +89,15 @@ export default function Weather({temp, condition, name}){
         size={80}
         color="white"
       />
-      <Text style={styles.city}>현재위치 : {name}</Text>
-        <Text style={styles.temp}>{temp} ℃</Text>
+      <Text style={styles.temp}>{temp} ℃</Text>
+      <Text style={styles.city}>You're now in {name}</Text>
       </View>
       <View style={{...styles.halfContainer, ...styles.textContainer}}>
         <Text style={styles.title}>{weatherOptions[condition].title}</Text>
         <Text style={styles.subtitle}> : {weatherOptions[condition].subtitle}</Text>
-        <Text style={styles.music}>추천곡 : {weatherOptions[condition].music}</Text>
+        <Text style={styles.musicSuggest}>날씨랑 어울리는 추천곡</Text>
+        <Text style={styles.music}> : {weatherOptions[condition].music}</Text>
+        <Text style={styles.musicGo} onPress={() =>  Linking.openURL(`https://www.google.com/search?q=${weatherOptions[condition].music}`)}>들으러 가기</Text>
       </View>
       </LinearGradient>
   )
@@ -148,17 +150,31 @@ const styles = StyleSheet.create({
     marginTop :20,
     marginBottom :20
   },
+  musicSuggest: {
+    marginTop : 20,
+    color : "white",
+    fontSize : 20,
+    justifyContent : "center",
+    alignItems : "center",
+    alignItems : "flex-start"
+  },
   music : {
-    paddingTop : 20,
     paddingBottom : 20,
     color : "white",
-    fontsize : 20,
+    fontSize : 20,
     justifyContent : "center",
     alignItems : "center",
     alignItems : "flex-start"
   },
   city : {
     color : "white",
-    fontSize : 20
+    fontSize : 15,
+    marginBottom : 15,
+    marginTop : 5
+  },
+  musicGo:{
+    margin :0,
+    color : "gray",
+    textDecorationLine : 'underline'
   }
 })
